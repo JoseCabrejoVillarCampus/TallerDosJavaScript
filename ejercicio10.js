@@ -5,28 +5,7 @@ mostrar: LA SUMATORIA DE LOS VALORES, EL VALOR DEL
 PROMEDIO, CUÁNTOS VALORES FUERON DIGITADOS, MAYOR
 VALOR Y MENOR VALOR. */
 
-/* let num=[];
-let i = 0;
-let opc = 1;
-let suma = 0;  
-while (opc != 0){
-    let nums = parseInt(prompt(`Ingrese el numero ${i+1} porfavor:`)); 
-    opc = nums
-    num.unshift(nums);
-    i++
-}
 
-console.log(num);
-
-for (let n of num) {
-	suma += n;
-}
-let promedio= suma/(num.length)-num[0];
-console.log(suma);
-console.log(num.length);
-console.log(promedio); */
-
-/* let num=0; */
 let list = [];
 i = 1;
 do{
@@ -40,10 +19,15 @@ do{
 console.log(list);
 
 
-
-const initialValue = 0;
-const sumWithInitial = list.reduce(initialValue);
-console.log(sumWithInitial);
-/* console.log(sum);
-console.log(list.length); */
+let sum = list.reduce(add,0);
+function add(accumulator, a) {
+    return accumulator + a;
+} 
+console.log(`El valor maximo digitado es: ${Math.max(...list)}`);
+console.log(`El valor minimo digitado es: ${Math.min(...list)}`);
+let unidades= list.length;
+console.log(`El total de numeros digitados es ${unidades}`); 
+console.log(`La suma de los numeros digitados es ${sum}`);
+let promedio=sum/list.length;
+console.log(`El promedio de los numeros digitados es ${promedio}`);
 
